@@ -50,8 +50,6 @@ app.post('/signin', (req, res) => {
     .catch((err) => res.status(400).json('Wrong credentials'));
 });
 
-//create a transaction (line 65) when you need to do multiple things at once
-//insert into login and insert into users
 app.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
   const hash = bcrypt.hashSync(password, 10);
