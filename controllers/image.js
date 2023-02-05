@@ -1,10 +1,14 @@
+const KEY = process.env.CALRIFAI_KEY;
+const USER_ID = process.env.USER_ID;
+const APP_ID = process.env.APP_ID;
+
 const handleApiCall = (req, res) => {
   const { input } = req.body;
 
   const raw = JSON.stringify({
     user_app_id: {
-      user_id: '',
-      app_id: '',
+      user_id: USER_ID,
+      app_id: APP_ID,
     },
     inputs: [
       {
@@ -21,7 +25,7 @@ const handleApiCall = (req, res) => {
     method: 'POST',
     headers: {
       Accept: 'application/json',
-      Authorization: ``,
+      Authorization: KEY,
     },
     body: raw,
   };

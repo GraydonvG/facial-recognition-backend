@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 const bcrypt = require('bcrypt');
 const cors = require('cors');
 const knex = require('knex');
@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.send(database.users);
+  res.send('It is working!');
 });
 
 app.post('/signin', (req, res) => {
@@ -46,6 +46,6 @@ app.post('/imageurl', (req, res) => {
   image.handleApiCall(req, res);
 });
 
-app.listen(port, () => {
-  console.log(`Running on ${port}`);
+app.listen(PORT, () => {
+  console.log(`Running on ${PORT}`);
 });
