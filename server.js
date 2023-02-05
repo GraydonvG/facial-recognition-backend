@@ -16,7 +16,7 @@ const db = knex({
     host: 'dpg-cffq8spgp3jjse9mvi8g-a.oregon-postgres.render.com',
     user: 'smart_brain_db_bd6z_user',
     database: 'smart_brain_db_bd6z',
-    password: 'process.env.DB_PASSWORD',
+    password: process.env.DB_PASSWORD,
     port: 5432,
     ssl: true,
   },
