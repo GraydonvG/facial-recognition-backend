@@ -18,7 +18,9 @@ const db = knex({
     database: 'smart_brain_db_bd6z',
     password: 'process.env.DB_PASSWORD',
     port: PORT,
-    ssl: true,
+    ssl: {
+      rejectUnauthorized: false,
+    },
   },
 });
 
