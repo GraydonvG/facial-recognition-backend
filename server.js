@@ -13,9 +13,9 @@ require('dotenv').config();
 const db = knex({
   client: 'pg',
   connection: {
-    host: 'dpg-cffo8do2i3mg6p9doeqg-a',
-    user: 'smart_brain_db1_g',
-    database: 'smart_brain_db1',
+    host: 'dpg-cffq8spgp3jjse9mvi8g-a.oregon-postgres.render.com',
+    user: 'smart_brain_db_bd6z_user',
+    database: 'smart_brain_db_bd6z',
     password: 'process.env.DB_PASSWORD',
     port: PORT,
     ssl: true,
