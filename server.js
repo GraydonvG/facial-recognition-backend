@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const bcrypt = require('bcrypt');
-const cors = require('cors');
 const knex = require('knex');
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
@@ -23,7 +22,6 @@ const db = knex({
 });
 
 app.use(express.json());
-app.use(cors());
 
 app.get('/', (req, res) => {
   res.send('It is working!');
