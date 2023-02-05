@@ -1,4 +1,4 @@
-const KEY = process.env.CALRIFAI_KEY;
+const KEY = process.env.API_CLARIFAI;
 const USER_ID = process.env.USER_ID;
 const APP_ID = process.env.APP_ID;
 
