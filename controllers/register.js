@@ -3,7 +3,16 @@ const handleRegister = (req, res, db, bcrypt) => {
   if (!email || !name || !password) {
     return res.status(400).json('Incorrect form submission');
   }
-  const hash = bcrypt.hashSync(password, 10);
+  // const hash = bcrypt.hashSync(password, 10);
+  const hash = async function (password) {
+    try {
+      const salt = await bcrypt.genSaltAsync(10);
+      return await bcrypt.hashAsync(password, salt);
+    } catch (err) {
+      console.log('Oops', err);
+    }
+  };
+
   db.transaction((trx) => {
     trx
       .insert({
